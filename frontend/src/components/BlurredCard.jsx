@@ -29,7 +29,7 @@ export default function BlurredCard({ onClose }) {
     try {
       // Send POST request to backend API for file upload
       const response = await axios.post(
-        "http://172.17.240.1:8000/upload-pdf",
+        "http://x.x.x.x:8000/upload-pdf",
         formData,
         {
           headers: {
