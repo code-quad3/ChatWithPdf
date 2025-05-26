@@ -46,7 +46,7 @@ function App() {
 
     try {
       // Send user question to backend
-      const res = await axios.post("http://172.17.240.1:8000/ask", {
+      const res = await axios.post("http://x.x.x.x:8000/ask", {
         question: input,
       });
 
