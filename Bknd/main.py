@@ -131,7 +131,7 @@ async def ask_question(request: QuestionRequest):
         docs = faiss_index.similarity_search(question)
 
         # Initialize Groq LLM with configuration
-        llm = ChatGroq(
+        llm = ChatGroq(api_key =os.getenv("MODEL_API_KEY"),
             model="llama3-8b-8192", temperature=0.5, max_tokens=1024
         )
 
