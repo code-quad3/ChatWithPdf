@@ -28,8 +28,9 @@ export default function BlurredCard({ onClose }) {
 
     try {
       // Send POST request to backend API for file upload
+      const apiUrl = import.meta.env.VITE_API_URL;
       const response = await axios.post(
-        "http://x.x.x.x:8000/upload-pdf",
+        "apiUrl/upload-pdf",
         formData,
         {
           headers: {
