@@ -46,7 +46,8 @@ function App() {
 
     try {
       // Send user question to backend
-      const res = await axios.post("http://x.x.x.x:8000/ask", {
+      const apilUrl = import.meta.env.VITE_API_URL;
+      const res = await axios.post("apiUrl/ask", {
         question: input,
       });
 
