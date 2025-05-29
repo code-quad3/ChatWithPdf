@@ -16,8 +16,6 @@ from services.vectore_process import process
 # Import LLM interface (Groq)
 from langchain_groq import ChatGroq
 
-# Load environment variables
-from dotenv import load_dotenv
 
 # Enable CORS for frontend access
 from fastapi.middleware.cors import CORSMiddleware
@@ -32,10 +30,7 @@ Base.metadata.create_all(bind=engine)
 
 # Define allowed CORS origins (usually frontend app URLs)
 origins = [
-    "http://localhost",
-    "http://localhost:5173",
-    "http://127.0.0.1",
-    "http://127.0.0.1:5173",
+   os.getenv("CLIENT_URL")
 ]
 
 # Initialize FastAPI app
@@ -50,8 +45,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-# Load environment variables from .env file
-load_dotenv()
+
 
 # Ensure the upload directory exists
 UPLOAD_FOLDER = "uploads"
